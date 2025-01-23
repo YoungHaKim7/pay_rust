@@ -37,6 +37,7 @@
     </div>
   </div>
   <script>
+    const ORDERNAME = "Rust Basic+Vim 패키지";
     const amount = {
       currency: "KRW",
       value: 400000,
@@ -60,7 +61,7 @@
     // TODO: 구매자의 고유 아이디를 불러와서 customerKey로 설정하세요. 이메일・전화번호와 같이 유추가 가능한 값은 안전하지 않습니다.
     // 개별 연동 키의 클라이언트 키로 sdk를 연동해야함.
     // @docs https://docs.tosspayments.com/sdk/v2/js#토스페이먼츠-초기화
-    const clientKey = "live_ck_PBal2vxj81vW9GXkzW5G35RQgOAN";
+    const clientKey = "test_ck_d46qopOB89dAJvQokOgLrZmM75y0";
     const customerKey = generateRandomString();
     const tossPayments = TossPayments(clientKey);
     // 회원 결제
@@ -82,7 +83,7 @@
             method: "CARD", // 카드 및 간편결제
             amount,
             orderId: generateRandomString(),
-            orderName: "Rust Basic+Vim 패키지",
+            orderName: ORDERNAME,
             successUrl: window.location.origin + "/public/payment/success.html", // 결제 요청이 성공하면 리다이렉트되는 URL
             failUrl: window.location.origin + "/public/fail.html", // 결제 요청이 실패하면 리다이렉트되는 URL
             customerEmail: "customer123@gmail.com",
@@ -101,7 +102,7 @@
             method: "TRANSFER", // 계좌이체 결제
             amount,
             orderId: generateRandomString(),
-            orderName: "Rust Basic+Vim 패키지",
+            orderName: ORDERNAME,
             successUrl: window.location.origin + "/public/payment/success.html",
             failUrl: window.location.origin + "/public/fail.html",
             customerEmail: "customer123@gmail.com",
@@ -153,7 +154,7 @@
             method: "CULTURE_GIFT_CERTIFICATE", // 문화상품권 결제
             amount,
             orderId: generateRandomString(),
-            orderName: "Rust Basic+Vim 패키지",
+            orderName: ORDERNAME,
             successUrl: window.location.origin + "/public/payment/success.html",
             failUrl: window.location.origin + "/public/fail.html",
             customerEmail: "customer123@gmail.com",
@@ -169,7 +170,7 @@
               currency: "USD",
             },
             orderId: generateRandomString(),
-            orderName: "Rust Basic+Vim 패키지",
+            orderName: ORDERNAME,
             successUrl: window.location.origin + "/public/payment/success.html",
             failUrl: window.location.origin + "/public/fail.html",
             customerEmail: "customer123@gmail.com",
